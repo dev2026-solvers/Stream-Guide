@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamGuide | Bahir Dar 7th Day Adventist Secondary School</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.94), rgba(30, 58, 138, 0.9)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-500 selection:text-white">
+
+    <!-- Top Info Bar with Language Switcher -->
+    <div class="bg-slate-900 text-slate-300 text-xs sm:text-sm py-2.5 px-4 sm:px-8 flex flex-col sm:flex-row justify-between items-center gap-2 border-b border-slate-800">
+        <div class="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-school text-blue-400"></i> <span id="top-school-name">Bahir Dar 7th Day Adventist Secondary School</span></span>
+            <span class="hidden md:inline text-slate-600">|</span>
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-amber-400"></i> Bahir Dar, Ethiopia</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <button onclick="toggleLanguage()" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-3 py-1 rounded-full text-xs transition duration-200 shadow-sm flex items-center gap-1.5">
+                <i class="fa-solid fa-language text-sm"></i>
+                <span id="lang-btn-text">Switch to አማርኛ</span>
+            </button>
+            <a href="https://t.me/+B1rzuAxLJLY5OGZk" target="_blank" class="text-slate-400 hover:text-white transition text-base" title="Telegram Community">
+                <i class="fa-brands fa-telegram"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-extrabold text-xl shadow-md">
+                    SG
+                </div>
+                <div>
+                    <h1 class="font-extrabold text-lg sm:text-xl text-slate-900 leading-tight">StreamGuide</h1>
+                    <p class="text-xs text-slate-500 font-medium">Bahir Dar SDA Academy</p>
+                </div>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-6 font-semibold text-sm">
+                <a href="#home" class="text-slate-700 hover:text-blue-600 transition" data-key="nav-home">Home</a>
+                <a href="#vision" class="text-slate-700 hover:text-blue-600 transition" data-key="nav-vision">Vision</a>
+                <a href="#streams" class="text-slate-700 hover:text-blue-600 transition" data-key="nav-streams">Stream Details</a>
+                <a href="#insights" class="text-slate-700 hover:text-blue-600 transition" data-key="nav-insights">Teacher Insights</a>
+                <a href="#faq" class="text-slate-700 hover:text-blue-600 transition" data-key="nav-faq">FAQs</a>
+                <a href="#assessment" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl transition shadow-sm font-bold text-xs uppercase tracking-wider" data-key="nav-assessment">Take Assessment</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20 lg:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <span class="inline-block bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6" data-key="hero-badge">
+                Official Stream Orientation Portal
+            </span>
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight" data-key="hero-title">
+                Empowering Ethiopian Grade 10 Students for a Purposeful Academic Future
+            </h2>
+            <p class="text-slate-300 text-base sm:text-xl max-w-3xl mx-auto mb-10 font-normal leading-relaxed" data-key="hero-subtitle">
+                A data-driven orientation framework combining Grade 9 & 10 academic averages with cognitive preference profiling to align students with their ideal stream (Natural vs. Social Science).
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#assessment" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl transition shadow-lg hover:shadow-blue-500/25 flex items-center justify-center gap-2 text-base" data-key="hero-btn-start">
+                    Start Stream Assessment <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#streams" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-8 py-4 rounded-xl transition backdrop-blur-sm text-base" data-key="hero-btn-explore">
+                    Explore Streams & Fields
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder & Vision Banner -->
+    <section id="vision" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
+        <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-indigo-500/30">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-tr from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 text-3xl font-extrabold shadow-lg shrink-0">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md border border-amber-400/30" data-key="vision-tag">Founder & Visionary</span>
+                        <span class="text-slate-400 text-xs font-medium" data-key="vision-school">Bahir Dar 7th Day Adventist Secondary School</span>
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-bold mb-3 text-white">Hadya Nuru <span class="text-slate-400 text-lg font-normal">(Grade 11 Student)</span></h3>
+                    <blockquote class="text-slate-200 italic text-base sm:text-lg border-l-4 border-amber-400 pl-4 py-1 leading-relaxed" data-key="vision-quote">
+                        "Vision: To completely eliminate academic failure and career disorientation among Grade 11 students in Ethiopia by empowering them with data-driven and psychological stream recommendations."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Streams & Fields Breakdown -->
+    <section id="streams" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4" data-key="streams-title">
+                Comprehensive Stream & Career Guide
+            </h2>
+            <p class="text-slate-600 text-base sm:text-lg" data-key="streams-subtitle">
+                Detailed breakdown of core academic branches, foundational courses, essential skills, and university pathways in Ethiopia.
+            </p>
+        </div>
+
+        <!-- Stream Selector Tabs -->
+        <div class="flex justify-center mb-10">
+            <div class="bg-slate-200/80 p-1.5 rounded-2xl flex gap-2 w-full max-w-md">
+                <button onclick="switchStreamTab('natural')" id="tab-natural-btn" class="flex-1 py-3 px-6 rounded-xl font-bold text-sm transition shadow-sm bg-blue-600 text-white">
+                    <i class="fa-solid fa-atom mr-2"></i> Natural Science
+                </button>
+                <button onclick="switchStreamTab('social')" id="tab-social-btn" class="flex-1 py-3 px-6 rounded-xl font-bold text-sm transition text-slate-700 hover:text-slate-900">
+                    <i class="fa-solid fa-scale-balanced mr-2"></i> Social Science
+                </button>
+            </div>
+        </div>
+
+        <!-- NATURAL SCIENCE FIELDS -->
+        <div id="tab-natural-content" class="space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Engineering & Technology -->
+                <div class="glass-card rounded-2xl p-6 sm:p-8 hover:shadow-xl transition duration-300 border-t-4 border-blue-600">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900" data-key="ns-field1-title">Engineering & Technology</h3>
+                            <p class="text-xs text-blue-600 font-semibold" data-key="ns-field1-sub">Software, Civil, Electrical, Mechanical, Architecture</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-4 leading-relaxed" data-key="ns-field1-desc">
+                        Focuses on applying mathematical and scientific principles to solve real-world physical and digital problems, designing structures, software, and electronic systems.
+                    </p>
+                    <div class="space-y-3 text-xs sm:text-sm">
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-courses">Key Grade 11/12 Courses:</strong>
+                            <span class="text-slate-600" data-key="ns-field1-courses">Advanced Mathematics, Physics, Chemistry, Technical Drawing, ICT</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-skills">Core Skills Required:</strong>
+                            <span class="text-slate-600" data-key="ns-field1-skills">Numerical logic, spatial reasoning, algorithmic thinking, spatial geometry</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-careers">University Careers in Ethiopia:</strong>
+                            <span class="text-slate-600" data-key="ns-field1-careers">Software Engineer, Civil Contractor, Electrical Grid Specialist, Robotics Developer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Sciences & Medicine -->
+                <div class="glass-card rounded-2xl p-6 sm:p-8 hover:shadow-xl transition duration-300 border-t-4 border-emerald-600">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900" data-key="ns-field2-title">Health Sciences & Medicine</h3>
+                            <p class="text-xs text-emerald-600 font-semibold" data-key="ns-field2-sub">Medicine, Dentistry, Pharmacy, Nursing, Public Health</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-4 leading-relaxed" data-key="ns-field2-desc">
+                        Dedicated to human anatomy, biological processes, disease prevention, diagnosis, and medical treatment.
+                    </p>
+                    <div class="space-y-3 text-xs sm:text-sm">
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-courses">Key Grade 11/12 Courses:</strong>
+                            <span class="text-slate-600" data-key="ns-field2-courses">Biology, Chemistry, Physics, English Language</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-skills">Core Skills Required:</strong>
+                            <span class="text-slate-600" data-key="ns-field2-skills">Memorization, analytical observation, empathy, stamina, laboratory precision</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-careers">University Careers in Ethiopia:</strong>
+                            <span class="text-slate-600" data-key="ns-field2-careers">Medical Doctor, Pharmacist, Clinical Researcher, Public Health Officer, Dentist</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Computational & Applied Sciences -->
+                <div class="glass-card rounded-2xl p-6 sm:p-8 hover:shadow-xl transition duration-300 border-t-4 border-violet-600">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-square-root-variable"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900" data-key="ns-field3-title">Computational & Applied Sciences</h3>
+                            <p class="text-xs text-violet-600 font-semibold" data-key="ns-field3-sub">Data Science, Physics, Chemistry, Statistics, Biotechnology</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-4 leading-relaxed" data-key="ns-field3-desc">
+                        Explores theoretical foundations of nature, energy, chemical compounds, data processing, and statistical modeling.
+                    </p>
+                    <div class="space-y-3 text-xs sm:text-sm">
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-courses">Key Grade 11/12 Courses:</strong>
+                            <span class="text-slate-600" data-key="ns-field3-courses">Mathematics, Physics, Chemistry, ICT</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-skills">Core Skills Required:</strong>
+                            <span class="text-slate-600" data-key="ns-field3-skills">Abstract reasoning, statistical analysis, hypothesis testing</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-careers">University Careers in Ethiopia:</strong>
+                            <span class="text-slate-600" data-key="ns-field3-careers">Data Analyst, Industrial Chemist, Physics Educator, Biotechnologist</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agriculture & Environmental Sciences -->
+                <div class="glass-card rounded-2xl p-6 sm:p-8 hover:shadow-xl transition duration-300 border-t-4 border-amber-600">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-wheat-awt"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900" data-key="ns-field4-title">Agriculture & Environmental Sciences</h3>
+                            <p class="text-xs text-amber-600 font-semibold" data-key="ns-field4-sub">Agronomy, Veterinary Medicine, Forestry, Natural Resource Management</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-4 leading-relaxed" data-key="ns-field4-desc">
+                        Crucial for Ethiopia's economy, focusing on crop yields, livestock health, soil science, and environmental preservation.
+                    </p>
+                    <div class="space-y-3 text-xs sm:text-sm">
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-courses">Key Grade 11/12 Courses:</strong>
+                            <span class="text-slate-600" data-key="ns-field4-courses">Biology, Chemistry, Geography, Agriculture</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-skills">Core Skills Required:</strong>
+                            <span class="text-slate-600" data-key="ns-field4-skills">Ecological analysis, fieldwork orientation, biological research</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-careers">University Careers in Ethiopia:</strong>
+                            <span class="text-slate-600" data-key="ns-field4-careers">Agronomist, Veterinary Doctor, Environmental Officer, Soil Scientist</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SOCIAL SCIENCE FIELDS -->
+        <div id="tab-social-content" class="space-y-8 hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Law & Legal Studies -->
+                <div class="glass-card rounded-2xl p-6 sm:p-8 hover:shadow-xl transition duration-300 border-t-4 border-indigo-600">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900" data-key="ss-field1-title">Law & Legal Studies</h3>
+                            <p class="text-xs text-indigo-600 font-semibold" data-key="ss-field1-sub">Constitutional Law, International Law, Human Rights, Criminology</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-4 leading-relaxed" data-key="ss-field1-desc">
+                        Examines constitutional principles, justice systems, human rights frameworks, corporate law, and dispute resolution.
+                    </p>
+                    <div class="space-y-3 text-xs sm:text-sm">
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-courses">Key Grade 11/12 Courses:</strong>
+                            <span class="text-slate-600" data-key="ss-field1-courses">History, Geography, English, Civics & Ethical Education</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-skills">Core Skills Required:</strong>
+                            <span class="text-slate-600" data-key="ss-field1-skills">Critical argumentation, extensive reading, public speaking, analytical writing</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-careers">University Careers in Ethiopia:</strong>
+                            <span class="text-slate-600" data-key="ss-field1-careers">Attorney at Law, Judge, Legal Advisor, Human Rights Advocate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business & Economics -->
+                <div class="glass-card rounded-2xl p-6 sm:p-8 hover:shadow-xl transition duration-300 border-t-4 border-teal-600">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900" data-key="ss-field2-title">Business & Economics</h3>
+                            <p class="text-xs text-teal-600 font-semibold" data-key="ss-field2-sub">Accounting, Management, Finance, Economics, Marketing</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-4 leading-relaxed" data-key="ss-field2-desc">
+                        Focuses on resource allocation, market dynamics, banking, financial management, entrepreneurship, and trade policies.
+                    </p>
+                    <div class="space-y-3 text-xs sm:text-sm">
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-courses">Key Grade 11/12 Courses:</strong>
+                            <span class="text-slate-600" data-key="ss-field2-courses">General Mathematics, Geography, History, Economics</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-skills">Core Skills Required:</strong>
+                            <span class="text-slate-600" data-key="ss-field2-skills">Financial numeracy, strategic planning, negotiation, market analysis</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-careers">University Careers in Ethiopia:</strong>
+                            <span class="text-slate-600" data-key="ss-field2-careers">Bank Auditor, Economist, Business Manager, Financial Analyst, Entrepreneur</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Sciences & Humanities -->
+                <div class="glass-card rounded-2xl p-6 sm:p-8 hover:shadow-xl transition duration-300 border-t-4 border-rose-600">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900" data-key="ss-field3-title">Social Sciences & Humanities</h3>
+                            <p class="text-xs text-rose-600 font-semibold" data-key="ss-field3-sub">Sociology, Psychology, Political Science, Philosophy</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-4 leading-relaxed" data-key="ss-field3-desc">
+                        Studies human behavior, societal development, psychological well-being, political institutions, and cultural history.
+                    </p>
+                    <div class="space-y-3 text-xs sm:text-sm">
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-courses">Key Grade 11/12 Courses:</strong>
+                            <span class="text-slate-600" data-key="ss-field3-courses">History, Geography, English Language, Civics</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-skills">Core Skills Required:</strong>
+                            <span class="text-slate-600" data-key="ss-field3-skills">Empathy, qualitative research, societal observation, interpersonal skills</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-careers">University Careers in Ethiopia:</strong>
+                            <span class="text-slate-600" data-key="ss-field3-careers">School Counselor, Clinical Psychologist, NGO Program Director, Political Analyst</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages, Journalism & Communication -->
+                <div class="glass-card rounded-2xl p-6 sm:p-8 hover:shadow-xl transition duration-300 border-t-4 border-purple-600">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-newspaper"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900" data-key="ss-field4-title">Languages & Communication</h3>
+                            <p class="text-xs text-purple-600 font-semibold" data-key="ss-field4-sub">Journalism, Public Relations, Literature, Foreign Languages</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-4 leading-relaxed" data-key="ss-field4-desc">
+                        Focuses on media production, investigative reporting, translation, public communication, and linguistic studies.
+                    </p>
+                    <div class="space-y-3 text-xs sm:text-sm">
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-courses">Key Grade 11/12 Courses:</strong>
+                            <span class="text-slate-600" data-key="ss-field4-courses">English, Amharic, History, Literature</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-skills">Core Skills Required:</strong>
+                            <span class="text-slate-600" data-key="ss-field4-skills">Linguistic mastery, creative writing, broadcasting, media editing</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <strong class="text-slate-800 block mb-1" data-key="label-careers">University Careers in Ethiopia:</strong>
+                            <span class="text-slate-600" data-key="ss-field4-careers">Broadcast Journalist, PR Specialist, Translator, Editor, Content Producer</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Teacher & Counselor Insights -->
+    <section id="insights" class="bg-slate-100 py-20 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4" data-key="insights-title">
+                    Perspectives from Educators & Counselors
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg" data-key="insights-subtitle">
+                    Real advice from high school teachers and academic advisors in Ethiopia.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between">
+                    <p class="text-slate-700 italic text-sm mb-6 leading-relaxed" data-key="insight1-text">
+                        "Choosing Natural Science solely due to family expectation without genuine interest in Physics and Math leads to high frustration in Grade 11. Interest must match aptitude."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 font-bold flex items-center justify-center text-sm">AT</div>
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-900" data-key="insight1-author">Ato Tadesse Worku</h4>
+                            <p class="text-xs text-slate-500" data-key="insight1-role">Senior Physics Teacher</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between">
+                    <p class="text-slate-700 italic text-sm mb-6 leading-relaxed" data-key="insight2-text">
+                        "Social Science is not an 'easy exit'. Fields like Law and Economics demand intense critical thinking, fast reading comprehension, and analytical writing skills."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-sm">WG</div>
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-900" data-key="insight2-author">W/ro Gennet Alemu</h4>
+                            <p class="text-xs text-slate-500" data-key="insight2-role">History & Social Science Department Head</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between">
+                    <p class="text-slate-700 italic text-sm mb-6 leading-relaxed" data-key="insight3-text">
+                        "Data-backed tools like StreamGuide help students assess both their Grade 9/10 marks and personal career preferences before committing to a stream."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 font-bold flex items-center justify-center text-sm">DS</div>
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-900" data-key="insight3-author">Dr. Solomon Girma</h4>
+                            <p class="text-xs text-slate-500" data-key="insight3-role">Educational Counselor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section id="faq" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4" data-key="faq-title">
+                Frequently Asked Questions
+            </h2>
+            <p class="text-slate-600 text-base" data-key="faq-subtitle">
+                Clear answers for Grade 10 students preparing for Grade 11 stream placement.
+            </p>
+        </div>
+
+        <div class="space-y-4">
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                <h3 class="font-bold text-lg text-slate-900 mb-2" data-key="faq1-q">1. Does my Grade 9 & 10 average determine my stream completely?</h3>
+                <p class="text-slate-600 text-sm leading-relaxed" data-key="faq1-a">
+                    School placement rules vary, but StreamGuide calculates a weighted match: 60% based on your academic subject averages and 40% on your psychological interest profiling.
+                </p>
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                <h3 class="font-bold text-lg text-slate-900 mb-2" data-key="faq2-q">2. Can I enter Computer Science or Software Engineering from Social Science?</h3>
+                <p class="text-slate-600 text-sm leading-relaxed" data-key="faq2-a">
+                    In Ethiopian university placements, official Engineering and Computer Science programs require a Natural Science background due to prerequisite Mathematics and Physics requirements.
+                </p>
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                <h3 class="font-bold text-lg text-slate-900 mb-2" data-key="faq3-q">3. What if my calculated recommendation differs from my personal dream?</h3>
+                <p class="text-slate-600 text-sm leading-relaxed" data-key="faq3-a">
+                    StreamGuide gives you a baseline match score. You can consult your academic counselor at school to discuss if additional effort in weak subjects can help you achieve your desired stream.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Assessment Portal -->
+    <section id="assessment" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-12 shadow-xl relative overflow-hidden">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-blue-600 font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-md" data-key="app-tag">Interactive Calculator</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-3" data-key="app-title">Stream Recommendation Portal</h2>
+                <p class="text-slate-500 text-sm mt-1" data-key="app-desc">Enter your grades and preferences to calculate your natural match score.</p>
+            </div>
+
+            <!-- STEP 1: REGISTRATION -->
+            <div id="step-1" class="space-y-6">
+                <div class="border-b border-slate-100 pb-4">
+                    <h3 class="font-bold text-lg text-slate-800" data-key="step1-header">Step 1: Student Registration</h3>
+                </div>
+                <form onsubmit="goToStep2(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2" data-key="label-name">Full Name</label>
+                        <input type="text" id="input-name" required placeholder="e.g. Hadya Nuru" class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:outline-none text-sm">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2" data-key="label-contact">Contact Info (Phone or Email)</label>
+                            <input type="text" id="input-contact" required placeholder="e.g. 0912345678" class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:outline-none text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2" data-key="label-section">Grade & Section</label>
+                            <input type="text" id="input-section" required placeholder="e.g. 10-A" class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:outline-none text-sm">
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition shadow-md text-sm mt-4 flex items-center justify-center gap-2">
+                        <span data-key="btn-next">Next: Academic Evaluation</span> <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- STEP 2: ACADEMIC & PSYCHOLOGICAL INPUT -->
+            <div id="step-2" class="space-y-6 hidden">
+                <div class="border-b border-slate-100 pb-4">
+                    <h3 class="font-bold text-lg text-slate-800" data-key="step2-header">Step 2: Subject Averages & Orientation</h3>
+                </div>
+                <form onsubmit="calculateStreamResult(event)" class="space-y-6">
+                    <div>
+                        <h4 class="font-bold text-xs uppercase text-amber-600 mb-3" data-key="step2-sub-grades">1. Enter Subject Averages (0-100)</h4>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                            <div><label class="block text-xs font-medium text-slate-600 mb-1">Maths</label><input type="number" id="m-math" min="0" max="100" required placeholder="0-100" class="w-full p-3 rounded-lg border border-slate-300 text-sm"></div>
+                            <div><label class="block text-xs font-medium text-slate-600 mb-1">Physics</label><input type="number" id="m-phys" min="0" max="100" required placeholder="0-100" class="w-full p-3 rounded-lg border border-slate-300 text-sm"></div>
+                            <div><label class="block text-xs font-medium text-slate-600 mb-1">Chemistry</label><input type="number" id="m-chem" min="0" max="100" required placeholder="0-100" class="w-full p-3 rounded-lg border border-slate-300 text-sm"></div>
+                            <div><label class="block text-xs font-medium text-slate-600 mb-1">Biology</label><input type="number" id="m-bio" min="0" max="100" required placeholder="0-100" class="w-full p-3 rounded-lg border border-slate-300 text-sm"></div>
+                            <div><label class="block text-xs font-medium text-slate-600 mb-1">History</label><input type="number" id="m-hist" min="0" max="100" required placeholder="0-100" class="w-full p-3 rounded-lg border border-slate-300 text-sm"></div>
+                            <div><label class="block text-xs font-medium text-slate-600 mb-1">Geography</label><input type="number" id="m-geo" min="0" max="100" required placeholder="0-100" class="w-full p-3 rounded-lg border border-slate-300 text-sm"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-xs uppercase text-amber-600 mb-3" data-key="step2-sub-psych">2. Interest Alignment</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1" data-key="q1-label">Which task style do you prefer?</label>
+                                <select id="q-pref1" required class="w-full p-3 rounded-lg border border-slate-300 text-sm">
+                                    <option value="natural">Solving numerical formulas, lab experiments, calculations</option>
+                                    <option value="social">Debating ideas, reading history, writing essays, language study</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1" data-key="q2-label">What is your long-term university dream?</label>
+                                <select id="q-pref2" required class="w-full p-3 rounded-lg border border-slate-300 text-sm">
+                                    <option value="natural">Engineering, Medicine, Technology, Applied Sciences</option>
+                                    <option value="social">Law, Business Administration, Economics, Journalism, Public Service</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition shadow-md text-sm">
+                        Calculate Recommendation <i class="fa-solid fa-calculator ml-1"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- STEP 3: RESULT & FINAL CHOICE SUBMISSION -->
+            <div id="step-3" class="space-y-6 hidden">
+                <div id="result-display-box" class="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 text-emerald-900">
+                    <!-- Dynamic JS content injected here -->
+                </div>
+
+                <form action="https://formspree.io/f/xbjnqkyw" method="POST" onsubmit="goToStep4(event)" class="space-y-4">
+                    <input type="hidden" name="Student_Name" id="hidden-name">
+                    <input type="hidden" name="Student_Contact" id="hidden-contact">
+                    <input type="hidden" name="Student_Section" id="hidden-section">
+                    <input type="hidden" name="Calculated_Recommendation" id="hidden-rec">
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2" data-key="label-final-choice">Your Final Chosen Stream Choice</label>
+                        <select name="Final_Stream_Choice" required class="w-full p-3.5 rounded-xl border border-slate-300 text-sm">
+                            <option value="Natural Science">Natural Science (ተፈጥሮ ሳይንስ)</option>
+                            <option value="Social Science">Social Science (ማህበራዊ ሳይንስ)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2" data-key="label-feedback">Message / Question for Founder (Hadya Nuru)</label>
+                        <textarea name="Feedback" rows="3" placeholder="Write your comments here..." class="w-full p-3.5 rounded-xl border border-slate-300 text-sm"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-xl transition text-sm">
+                        Submit Choice & Send Data <i class="fa-solid fa-paper-plane ml-1"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- STEP 4: TELEGRAM COMMUNITY -->
+            <div id="step-4" class="text-center py-8 space-y-6 hidden">
+                <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl mx-auto">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900" data-key="step4-title">Submission Successfully Saved!</h3>
+                <p class="text-slate-600 text-sm max-w-md mx-auto" data-key="step4-desc">
+                    Thank you for completing your orientation assessment. Join our Telegram community to receive official updates, study materials, and direct guidance.
+                </p>
+                <a href="https://t.me/+B1rzuAxLJLY5OGZk" target="_blank" class="inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white font-bold px-8 py-4 rounded-xl transition text-sm shadow-md">
+                    Join Telegram Community <i class="fa-brands fa-telegram text-lg"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-center text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto px-4 space-y-3">
+            <p>&copy; 2026 StreamGuide & Bahir Dar 7th Day Adventist Secondary School. All Rights Reserved.</p>
+            <p class="text-slate-500">Founded & Developed under the vision of <strong>Hadya Nuru</strong> (Grade 11 Student)</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Language Translations Object
+        const translations = {
+            en: {
+                "top-school-name": "Bahir Dar 7th Day Adventist Secondary School",
+                "lang-btn-text": "Switch to አማርኛ",
+                "nav-home": "Home",
+                "nav-vision": "Vision",
+                "nav-streams": "Stream Details",
+                "nav-insights": "Teacher Insights",
+                "nav-faq": "FAQs",
+                "nav-assessment": "Take Assessment",
+                "hero-badge": "Official Stream Orientation Portal",
+                "hero-title": "Empowering Ethiopian Grade 10 Students for a Purposeful Academic Future",
+                "hero-subtitle": "A data-driven orientation framework combining Grade 9 & 10 academic averages with cognitive preference profiling to align students with their ideal stream (Natural vs. Social Science).",
+                "hero-btn-start": "Start Stream Assessment",
+                "hero-btn-explore": "Explore Streams & Fields",
+                "vision-tag": "Founder & Visionary",
+                "vision-school": "Bahir Dar 7th Day Adventist Secondary School",
+                "vision-quote": "\"Vision: To completely eliminate academic failure and career disorientation among Grade 11 students in Ethiopia by empowering them with data-driven and psychological stream recommendations.\"",
+                "streams-title": "Comprehensive Stream & Career Guide",
+                "streams-subtitle": "Detailed breakdown of core academic branches, foundational courses, essential skills, and university pathways in Ethiopia.",
+                "label-courses": "Key Grade 11/12 Courses:",
+                "label-skills": "Core Skills Required:",
+                "label-careers": "University Careers in Ethiopia:",
+                "ns-field1-title": "Engineering & Technology",
+                "ns-field1-sub": "Software, Civil, Electrical, Mechanical, Architecture",
+                "ns-field1-desc": "Focuses on applying mathematical and scientific principles to solve real-world physical and digital problems, designing structures, software, and electronic systems.",
+                "ns-field1-courses": "Advanced Mathematics, Physics, Chemistry, Technical Drawing, ICT",
+                "ns-field1-skills": "Numerical logic, spatial reasoning, algorithmic thinking, spatial geometry",
+                "ns-field1-careers": "Software Engineer, Civil Contractor, Electrical Grid Specialist, Robotics Developer",
+                "ns-field2-title": "Health Sciences & Medicine",
+                "ns-field2-sub": "Medicine, Dentistry, Pharmacy, Nursing, Public Health",
+                "ns-field2-desc": "Dedicated to human anatomy, biological processes, disease prevention, diagnosis, and medical treatment.",
+                "ns-field2-courses": "Biology, Chemistry, Physics, English Language",
+                "ns-field2-skills": "Memorization, analytical observation, empathy, stamina, laboratory precision",
+                "ns-field2-careers": "Medical Doctor, Pharmacist, Clinical Researcher, Public Health Officer, Dentist",
+                "ns-field3-title": "Computational & Applied Sciences",
+                "ns-field3-sub": "Data Science, Physics, Chemistry, Statistics, Biotechnology",
+                "ns-field3-desc": "Explores theoretical foundations of nature, energy, chemical compounds, data processing, and statistical modeling.",
+                "ns-field3-courses": "Mathematics, Physics, Chemistry, ICT",
+                "ns-field3-skills": "Abstract reasoning, statistical analysis, hypothesis testing",
+                "ns-field3-careers": "Data Analyst, Industrial Chemist, Physics Educator, Biotechnologist",
+                "ns-field4-title": "Agriculture & Environmental Sciences",
+                "ns-field4-sub": "Agronomy, Veterinary Medicine, Forestry, Natural Resource Management",
+                "ns-field4-desc": "Crucial for Ethiopia's economy, focusing on crop yields, livestock health, soil science, and environmental preservation.",
+                "ns-field4-courses": "Biology, Chemistry, Geography, Agriculture",
+                "ns-field4-skills": "Ecological analysis, fieldwork orientation, biological research",
+                "ns-field4-careers": "Agronomist, Veterinary Doctor, Environmental Officer, Soil Scientist",
+                "ss-field1-title": "Law & Legal Studies",
+                "ss-field1-sub": "Constitutional Law, International Law, Human Rights, Criminology",
+                "ss-field1-desc": "Examines constitutional principles, justice systems, human rights frameworks, corporate law, and dispute resolution.",
+                "ss-field1-courses": "History, Geography, English, Civics & Ethical Education",
+                "ss-field1-skills": "Critical argumentation, extensive reading, public speaking, analytical writing",
+                "ss-field1-careers": "Attorney at Law, Judge, Legal Advisor, Human Rights Advocate",
+                "ss-field2-title": "Business & Economics",
+                "ss-field2-sub": "Accounting, Management, Finance, Economics, Marketing",
+                "ss-field2-desc": "Focuses on resource allocation, market dynamics, banking, financial management, entrepreneurship, and trade policies.",
+                "ss-field2-courses": "General Mathematics, Geography, History, Economics",
+                "ss-field2-skills": "Financial numeracy, strategic planning, negotiation, market analysis",
+                "ss-field2-careers": "Bank Auditor, Economist, Business Manager, Financial Analyst, Entrepreneur",
+                "ss-field3-title": "Social Sciences & Humanities",
+                "ss-field3-sub": "Sociology, Psychology, Political Science, Philosophy",
+                "ss-field3-desc": "Studies human behavior, societal development, psychological well-being, political institutions, and cultural history.",
+                "ss-field3-courses": "History, Geography, English Language, Civics",
+                "ss-field3-skills": "Empathy, qualitative research, societal observation, interpersonal skills",
+                "ss-field3-careers": "School Counselor, Clinical Psychologist, NGO Program Director, Political Analyst",
+                "ss-field4-title": "Languages & Communication",
+                "ss-field4-sub": "Journalism, Public Relations, Literature, Foreign Languages",
+                "ss-field4-desc": "Focuses on media production, investigative reporting, translation, public communication, and linguistic studies.",
+                "ss-field4-courses": "English, Amharic, History, Literature",
+                "ss-field4-skills": "Linguistic mastery, creative writing, broadcasting, media editing",
+                "ss-field4-careers": "Broadcast Journalist, PR Specialist, Translator, Editor, Content Producer",
+                "insights-title": "Perspectives from Educators & Counselors",
+                "insights-subtitle": "Real advice from high school teachers and academic advisors in Ethiopia.",
+                "insight1-text": "\"Choosing Natural Science solely due to family expectation without genuine interest in Physics and Math leads to high frustration in Grade 11. Interest must match aptitude.\"",
+                "insight1-author": "Ato Tadesse Worku",
+                "insight1-role": "Senior Physics Teacher",
+                "insight2-text": "\"Social Science is not an 'easy exit'. Fields like Law and Economics demand intense critical thinking, fast reading comprehension, and analytical writing skills.\"",
+                "insight2-author": "W/ro Gennet Alemu",
+                "insight2-role": "History & Social Science Department Head",
+                "insight3-text": "\"Data-backed tools like StreamGuide help students assess both their Grade 9/10 marks and personal career preferences before committing to a stream.\"",
+                "insight3-author": "Dr. Solomon Girma",
+                "insight3-role": "Educational Counselor",
+                "faq-title": "Frequently Asked Questions",
+                "faq-subtitle": "Clear answers for Grade 10 students preparing for Grade 11 stream placement.",
+                "faq1-q": "1. Does my Grade 9 & 10 average determine my stream completely?",
+                "faq1-a": "School placement rules vary, but StreamGuide calculates a weighted match: 60% based on your academic subject averages and 40% on your psychological interest profiling.",
+                "faq2-q": "2. Can I enter Computer Science or Software Engineering from Social Science?",
+                "faq2-a": "In Ethiopian university placements, official Engineering and Computer Science programs require a Natural Science background due to prerequisite Mathematics and Physics requirements.",
+                "faq3-q": "3. What if my calculated recommendation differs from my personal dream?",
+                "faq3-a": "StreamGuide gives you a baseline match score. You can consult your academic counselor at school to discuss if additional effort in weak subjects can help you achieve your desired stream.",
+                "app-tag": "Interactive Calculator",
+                "app-title": "Stream Recommendation Portal",
+                "app-desc": "Enter your grades and preferences to calculate your natural match score.",
+                "step1-header": "Step 1: Student Registration",
+                "label-name": "Full Name",
+                "label-contact": "Contact Info (Phone or Email)",
+                "label-section": "Grade & Section",
+                "btn-next": "Next: Academic Evaluation",
+                "step2-header": "Step 2: Subject Averages & Orientation",
+                "step2-sub-grades": "1. Enter Subject Averages (0-100)",
+                "step2-sub-psych": "2. Interest Alignment",
+                "q1-label": "Which task style do you prefer?",
+                "q2-label": "What is your long-term university dream?",
+                "label-final-choice": "Your Final Chosen Stream Choice",
+                "label-feedback": "Message / Question for Founder (Hadya Nuru)",
+                "step4-title": "Submission Successfully Saved!",
+                "step4-desc": "Thank you for completing your orientation assessment. Join our Telegram community to receive official updates, study materials, and direct guidance."
+            },
+            am: {
+                "top-school-name": "ባህር ዳር የ7ኛው ቀን አድቬንቲስት ሁለተኛ ደረጃ ትምህርት ቤት",
+                "lang-btn-text": "Switch to English",
+                "nav-home": "ዋና ገጽ",
+                "nav-vision": "ራዕይ",
+                "nav-streams": "የዘርፍ ዝርዝሮች",
+                "nav-insights": "የመምህራን ምክር",
+                "nav-faq": "ጥያቄዎች",
+                "nav-assessment": "ምዘና ጀምር",
+                "hero-badge": "ይፋዊ የትምህርት ዘርፍ አመራረጥ ፖርታል",
+                "hero-title": "ለኢትዮጵያ የ10ኛ ክፍል ተማሪዎች የተዘጋጀ የትምህርት ዘርፍ መምሪያ",
+                "hero-subtitle": "የ9ኛ እና 10ኛ ክፍል የትምህርት ውጤቶችን ከፍላጎት እና ስነ-ልቦና ጋር በማጣመር ትክክለኛውን የትምህርት ዘርፍ (Natural vs. Social Science) ለመምረጥ የሚያስችል ዘዴ።",
+                "hero-btn-start": "የምዘና ስሌት ጀምር",
+                "hero-btn-explore": "የዘርፍ ዝርዝሮችን ይመልከቱ",
+                "vision-tag": "መሥራች እና ባለራዕይ",
+                "vision-school": "ባህር ዳር የ7ኛው ቀን አድቬንቲስት ሁለተኛ ደረጃ ትምህርት ቤት",
+                "vision-quote": "\"ራዕይ፦ በኢትዮጵያ በ11ኛ ክፍል ተማሪዎች ዘንድ የሚታየውን የትምህርት ውድቀት እና የዘርፍ አለመጣጣም በመረጃ እና በስነ-ልቦናዊ ስሌት የተደገፈ መመሪያ በመስጠት ሙሉ በሙሉ ማስወገድ።\"",
+                "streams-title": "ሙሉ የትምህርት ዘርፍ እና የሙያ መመሪያ",
+                "streams-subtitle": "በኢትዮጵያ የዩኒቨርሲቲ ትምህርቶች፣ የሚያስፈልጉ ክህሎቶች እና የትምህርት ዓይነቶች ዝርዝር መግለጫ።",
+                "label-courses": "ዋና የ11/12 ክፍል ትምህርቶች፦",
+                "label-skills": "የሚያስፈልጉ ዋና ክህሎቶች፦",
+                "label-careers": "የወደፊት የዩኒቨርሲቲ ሙያዎች፦",
+                "ns-field1-title": "ኢንጂነሪንግ እና ቴክኖሎጂ",
+                "ns-field1-sub": "ሶፍትዌር፣ ሲቪል፣ ኤሌክትሪካል፣ መካኒካል፣ አርክቴክቸር",
+                "ns-field1-desc": "የሒሳብ እና የሳይንስ መርሆዎችን በመጠቀም የህብረተሰብ ችግሮችን መፍታት፣ ሶፍትዌሮችን እና የቴክኖሎጂ ውጤቶችን መንደፍ ላይ ያተኩራል።",
+                "ns-field1-courses": "ከፍተኛ ሒሳብ፣ ፊዚክስ፣ ኬሚስትሪ፣ ቴክኒካል ድሮይንግ፣ ICT",
+                "ns-field1-skills": "የቁጥር እና ሎጂክ ስሌት፣ የጂኦሜትሪ አስተሳሰብ፣ አልጎሪዝም",
+                "ns-field1-careers": "ሶፍትዌር ኢንጂነር፣ ሲቪል ኮንትራክተር፣ ኤሌክትሪካል ባለሙያ፣ ሮቦቲክስ",
+                "ns-field2-title": "የጤና ሳይንስ እና ህክምና",
+                "ns-field2-sub": "ህክምና፣ የጥርስ ህክምና፣ ፋርማሲ፣ ነርሲንግ፣ ህዝብ ጤና",
+                "ns-field2-desc": "የሰው ልጅ የሰውነት አካል፣ ባዮሎጂያዊ ሂደቶች፣ የበሽታዎች መከላከያ እና ህክምና ላይ ያተኩራል።",
+                "ns-field2-courses": "ባዮሎጂ፣ ኬሚስትሪ፣ ፊዚክስ፣ እንግሊዝኛ",
+                "ns-field2-skills": "የማስታወስ ብቃት፣ ጥንቃቄ፣ የላብራቶሪ ምርመራ ክህሎት",
+                "ns-field2-careers": "የህክምና ዶክተር፣ ፋርማሲስት፣ የህክምና ተመራማሪ፣ የጥርስ ሐኪም",
+                "ns-field3-title": "ኮምፒውቴሽናል እና አፕላይድ ሳይንስ",
+                "ns-field3-sub": "ዳታ ሳይንስ፣ ፊዚክስ፣ ኬሚስትሪ፣ ስታቲስቲክስ፣ ባዮቴክኖሎጂ",
+                "ns-field3-desc": "የተፈጥሮ ህጎች፣ የኃይል እና የኬሚካል ውህዶች፣ እንዲሁም የዳታ ስሌቶችን በቲዎሪ እና በተግባር ያጠናል።",
+                "ns-field3-courses": "ሒሳብ፣ ፊዚክስ፣ ኬሚስትሪ፣ ICT",
+                "ns-field3-skills": "መርምሮ የማወቅ ፍላጎት፣ የዳታ ትንተና፣ የቁጥር ስሌት",
+                "ns-field3-careers": "ዳታ አናሊስት፣ ኢንዱስትሪያል ኬሚስት፣ የፊዚክስ መምህር",
+                "ns-field4-title": "ግብርና እና አካባቢ ሳይንስ",
+                "ns-field4-sub": "አግሮኖሚ፣ የእንስሳት ህክምና፣ የደን ልማት፣ የተፈጥሮ ሀብት",
+                "ns-field4-desc": "ለኢትዮጵያ ኢኮኖሚ ወሳኝ የሆነው ዘርፍ ሲሆን በሰብል ምርታማነት፣ በእንስሳት ጤና እና በተፈጥሮ ጥበቃ ላይ ያተኩራል።",
+                "ns-field4-courses": "ባዮሎጂ፣ ኬሚስትሪ፣ ጂኦግራፊ፣ ግብርና",
+                "ns-field4-skills": "የመስክ ምርምር፣ የስነ-ምህዳር ጥናት፣ የባዮሎጂ እውቀት",
+                "ns-field4-careers": "አግሮኖሚስት፣ የእንስሳት ሐኪም፣ የአካባቢ ጥበቃ ባለሙያ",
+                "ss-field1-title": "ህግ እና ህጋዊ ጥናቶች",
+                "ss-field1-sub": "ሕገ-መንግሥታዊ ህግ፣ ዓለም አቀፍ ህግ፣ ሰብአዊ መብቶች",
+                "ss-field1-desc": "የፍትህ ስርዓቶችን፣ የሰብአዊ መብቶችን፣ የህግ ድንጋጌዎችን እና የክርክር መፍትሔዎችን ያጠናል።",
+                "ss-field1-courses": "ታሪክ፣ ጂኦግራፊ፣ እንግሊዝኛ፣ ዜግነት ትምህርት",
+                "ss-field1-skills": "አሳማኝ ንግግር፣ ሰፊ ንባብ፣ የህግ ትንተና እና ክርክር",
+                "ss-field1-careers": "ጠበቃ፣ ዳኛ፣ የህግ አማካሪ፣ የሰብአዊ መብት ተሟጋች",
+                "ss-field2-title": "ቢዝነስ እና ኢኮኖሚክስ",
+                "ss-field2-sub": "አካውንቲንግ፣ ማኔጅመንት፣ ፋይናንስ፣ ኢኮኖሚክስ፣ ማርኬቲንግ",
+                "ss-field2-desc": "የሀብት ክፍፍል፣ የባንክ እና ፋይናንስ ስርዓት፣ የንግድ ስራ እና የስራ ፈጠራ መርሆዎችን ያጠናል።",
+                "ss-field2-courses": "አጠቃላይ ሒሳብ፣ ጂኦግራፊ፣ ታሪክ፣ ኢኮኖሚክስ",
+                "ss-field2-skills": "የፋይናንስ ስሌት፣ የንግድ ድርድር፣ የእቅድ ዝግጅት",
+                "ss-field2-careers": "የባንክ ኦዲተር፣ ኢኮኖሚስት፣ የቢዝነስ ሥራ አስኪያጅ፣ ሥራ ፈጣሪ",
+                "ss-field3-title": "ማህበራዊ ሳይንስ እና ሂውማኒቲስ",
+                "ss-field3-sub": "ሶሺዮሎጂ፣ ሳይኮሎጂ፣ ፖለቲካ ሳይንስ፣ ፍልስፍና",
+                "ss-field3-desc": "የሰው ልጅ ባህሪ፣ የማህበረሰብ እድገት፣ የስነ-ልቦና ጤና እና የፖለቲካ ተቋማትን ያጠናል።",
+                "ss-field3-courses": "ታሪክ፣ ጂኦግራፊ፣ እንግሊዝኛ፣ ዜግነት",
+                "ss-field3-skills": "የሰዎች ባህሪ መረዳት፣ የማህበራዊ ምርምር ክህሎት",
+                "ss-field3-careers": "የስነ-ልቦና አማካሪ፣ የኤንጂኦ ፕሮግራም ዳይሬክተር፣ ፖለቲካ አናሊስት",
+                "ss-field4-title": "ቋንቋዎች እና ኮሙኒኬሽን",
+                "ss-field4-sub": "ጋዜጠኝነት፣ ህዝብ ግንኙነት፣ ስነ-ጽሁፍ፣ የውጭ ቋንቋዎች",
+                "ss-field4-desc": "የሚዲያ ዝግጅት፣ የምርመራ ጋዜጠኝነት፣ የትርጉም ስራ እና የህዝብ ግንኙነት ላይ ያተኩራል።",
+                "ss-field4-courses": "እንግሊዝኛ፣ አማርኛ፣ ታሪክ፣ ስነ-ጽሁፍ",
+                "ss-field4-skills": "የቋንቋ ችሎታ፣ የፈጠራ ጽሁፍ፣ የህዝብ ግንኙነት፣ የሚዲያ ስራ",
+                "ss-field4-careers": "ጋዜጠኛ፣ የህዝብ ግንኙነት ባለሙያ፣ ተርጓሚ፣ አዘጋጅ",
+                "insights-title": "የመምህራን እና የአካዳሚክ አማካሪዎች ምክር",
+                "insights-subtitle": "ከሁለተኛ ደረጃ መምህራን የተገኙ እውነተኛ የሙያ ምክሮች።",
+                "insight1-text": "\"ያለ ፍላጎት በቤተሰብ ጫና ብቻ ወደ ተፈጥሮ ሳይንስ መግባት በ11ኛ ክፍል ከፍተኛ ውጤት መውረድ ያስከትላል። ፍላጎት እና ችሎታ ጎን ለጎን መሄድ አለባቸው።\"",
+                "insight1-author": "አቶ ታደሰ ወርቁ",
+                "insight1-role": "የፊዚክስ መምህር",
+                "insight2-text": "\"ማህበራዊ ሳይንስ ቀሊል መስሎ ይታያል ነገር ግን እንደ ህግ እና ኢኮኖሚክስ ያሉ ዘርፎች ከፍተኛ የንባብ እና የትንተና ክህሎት ይፈልጋሉ።\"",
+                "insight2-author": "ወ/ሮ ገነት አለሙ",
+                "insight2-role": "የታሪክ እና ማህበራዊ ሳይንስ መምህር",
+                "insight3-text": "\"እንደ StreamGuide ያሉ የመረጃ ስሌቶች ተማሪዎች ከመወሰናቸው በፊት ውጤታቸውን እና ፍላጎታቸውን ሚዛናዊ በሆነ መንገድ እንዲመዝኑ ይረዳቸዋል።\"",
+                "insight3-author": "ዶ/ር ሰለሞን ግርማ",
+                "insight3-role": "የትምህርት ስነ-ልቦና አማካሪ",
+                "faq-title": "ተደጋግመው የሚጠየቁ ጥያቄዎች",
+                "faq-subtitle": "ለ10ኛ ክፍል ተማሪዎች የተዘጋጁ ግልጽ ምላሾች።",
+                "faq1-q": "1. የ9ኛ እና 10ኛ ክፍል ውጤቴ ብቻ ነው ዘርፌን የሚወስነው?",
+                "faq1-a": "StreamGuide 60% ለአካዳሚክ ውጤት እና 40% ለስነ-ልቦና እና ለሙያ ፍላጎት ዋጋ በመስጠት ነው የሚያስለው።",
+                "faq2-q": "2. በማህበራዊ ሳይንስ አልፌ የኮምፒውተር ሳይንስ መማር እችላለሁ?",
+                "faq2-a": "በኢትዮጵያ ዩኒቨርሲቲዎች ህግ መሰረት የኢንጂነሪንግ እና ኮምፒውተር ሳይንስ ትምህርቶች የተፈጥሮ ሳይንስ ጀርባን ይፈልጋሉ።",
+                "faq3-q": "3. የወጣው ውጤት ከእኔ ፍላጎት ጋር ባይጣጣምስ?",
+                "faq3-a": "የመጣውን ውጤት መሰረት በማድረግ በትምህርት ቤትህ ካሉ የአካዳሚክ አማካሪዎች ጋር በመነጋገር ውሳኔህን ማስተካከል ትችላለህ።",
+                "app-tag": "የመመዘኛ ስሌት",
+                "app-title": "የዘርፍ ማሰሊያ ፖርታል",
+                "app-desc": "ውጤትህን እና ፍላጎትህን በማስገባት የተሰላውን ውጤት ተመልከት።",
+                "step1-header": "ደረጃ 1፦ የተማሪዎች ምዝገባ",
+                "label-name": "ሙሉ ስም",
+                "label-contact": "ስልክ ወይም ኢሜይል",
+                "label-section": "ክፍልና ሴክሽን",
+                "btn-next": "ቀጣይ፦ የውጤት ማስገቢያ",
+                "step2-header": "ደረጃ 2፦ የትምህርት ውጤት እና ፍላጎት",
+                "step2-sub-grades": "1. የትምህርቶች አማካይ ውጤት (0-100)",
+                "step2-sub-psych": "2. የስነ-ልቦና እና የሙያ ፍላጎት",
+                "q1-label": "የትኛውን የጥናት መንገድ ትመርጣለህ?",
+                "q2-label": "የወደፊት የዩኒቨርሲቲ ህልምህ ምንድን ነው?",
+                "label-final-choice": "የመጨረሻ የመረጥከው የትምህርት ዘርፍ",
+                "label-feedback": "ለፕሮጀክቱ መሥራች (ሀድያ ኑሩ) አስተያየት ወይም ጥያቄ",
+                "step4-title": "ምዝገባው በተሳካ ሁኔታ ተጠናቋል!",
+                "step4-desc": "ስለተሳተፉ እናመሰግናለን። ተጨማሪ መረጃዎችን እና የጥናት ድጋፎችን ለማግኘት የቴሌግራም ቻናላችንን ይቀላቀሉ።"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'am' : 'en';
+            const langData = translations[currentLang];
+
+            // Update DOM text elements with data-key
+            document.querySelectorAll('[data-key]').forEach(elem => {
+                const key = elem.getAttribute('data-key');
+                if (langData[key]) {
+                    elem.textContent = langData[key];
+                }
+            });
+        }
+
+        // Tab Switching Logic
+        function switchStreamTab(tab) {
+            const naturalContent = document.getElementById('tab-natural-content');
+            const socialContent = document.getElementById('tab-social-content');
+            const naturalBtn = document.getElementById('tab-natural-btn');
+            const socialBtn = document.getElementById('tab-social-btn');
+
+            if (tab === 'natural') {
+                naturalContent.classList.remove('hidden');
+                socialContent.classList.add('hidden');
+                naturalBtn.className = "flex-1 py-3 px-6 rounded-xl font-bold text-sm transition shadow-sm bg-blue-600 text-white";
+                socialBtn.className = "flex-1 py-3 px-6 rounded-xl font-bold text-sm transition text-slate-700 hover:text-slate-900";
+            } else {
+                socialContent.classList.remove('hidden');
+                naturalContent.classList.add('hidden');
+                socialBtn.className = "flex-1 py-3 px-6 rounded-xl font-bold text-sm transition shadow-sm bg-blue-600 text-white";
+                naturalBtn.className = "flex-1 py-3 px-6 rounded-xl font-bold text-sm transition text-slate-700 hover:text-slate-900";
+            }
+        }
+
+        // Assessment App Navigation and Calculation
+        let studentProfile = {};
+
+        function goToStep2(e) {
+            e.preventDefault();
+            studentProfile.name = document.getElementById('input-name').value;
+            studentProfile.contact = document.getElementById('input-contact').value;
+            studentProfile.section = document.getElementById('input-section').value;
+
+            document.getElementById('hidden-name').value = studentProfile.name;
+            document.getElementById('hidden-contact').value = studentProfile.contact;
+            document.getElementById('hidden-section').value = studentProfile.section;
+
+            document.getElementById('step-1').classList.add('hidden');
+            document.getElementById('step-2').classList.remove('hidden');
+        }
+
+        function calculateStreamResult(e) {
+            e.preventDefault();
+
+            const math = parseFloat(document.getElementById('m-math').value);
+            const phys = parseFloat(document.getElementById('m-phys').value);
+            const chem = parseFloat(document.getElementById('m-chem').value);
+            const bio = parseFloat(document.getElementById('m-bio').value);
+            const hist = parseFloat(document.getElementById('m-hist').value);
+            const geo = parseFloat(document.getElementById('m-geo').value);
+
+            const naturalAcademicAvg = (math + phys + chem + bio) / 4;
+            const socialAcademicAvg = (hist + geo + math) / 3;
+
+            const pref1 = document.getElementById('q-pref1').value;
+            const pref2 = document.getElementById('q-pref2').value;
+
+            let psychNaturalScore = 0;
+            if (pref1 === 'natural') psychNaturalScore += 50;
+            if (pref2 === 'natural') psychNaturalScore += 50;
+
+            const finalNaturalScore = Math.round((naturalAcademicAvg * 0.6) + (psychNaturalScore * 0.4));
+            const finalSocialScore = 100 - finalNaturalScore;
+
+            const recStream = finalNaturalScore >= 55 ? "Natural Science" : "Social Science";
+
+            document.getElementById('hidden-rec').value = `Natural: ${finalNaturalScore}%, Social: ${finalSocialScore}% -> Recommended: ${recStream}`;
+
+            const resultBox = document.getElementById('result-display-box');
+            resultBox.innerHTML = `
+                <h4 class="font-bold text-lg mb-2">Calculated Result for ${studentProfile.name}:</h4>
+                <p class="text-sm"><strong>Natural Science Match:</strong> ${finalNaturalScore}%</p>
+                <p class="text-sm"><strong>Social Science Match:</strong> ${finalSocialScore}%</p>
+                <hr class="my-3 border-emerald-200">
+                <p class="text-base font-bold">Recommended Stream: <span class="underline">${recStream}</span></p>
+            `;
+
+            document.getElementById('step-2').classList.add('hidden');
+            document.getElementById('step-3').classList.remove('hidden');
+        }
+
+        function goToStep4(e) {
+            setTimeout(() => {
+                document.getElementById('step-3').classList.add('hidden');
+                document.getElementById('step-4').classList.remove('hidden');
+            }, 400);
+        }
+    </script>
+</body>
+</html>
